@@ -1,0 +1,201 @@
+/* index.css */
+
+/* 전체 레이아웃 및 기본 스타일 */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-container {
+  min-height: 100vh;
+  background-color: #ffffff; /* 기본 배경색 */
+  color: #1f2937; /* 기본 글자색 (gray-800) */
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.main-content {
+  flex-grow: 1; /* Footer를 제외한 모든 공간 차지 */
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px; /* 콘텐츠 최대 너비 */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem; /* 모바일 기본 패딩 */
+}
+
+/* 헤더 */
+.page-header {
+  display: flex;
+  flex-direction: column; /* 모바일: 수직 정렬 */
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem; /* 32px */
+}
+
+.main-title {
+  font-size: 2.25rem; /* 36px */
+  font-weight: 700;
+  color: #111827; /* gray-900 */
+  margin: 0;
+}
+
+.subtitle {
+  margin-top: 0.5rem; /* 8px */
+  font-size: 1.125rem; /* 18px */
+  color: #4b5563; /* gray-600 */
+}
+
+/* '새 웹사이트 만들기' 버튼 */
+.create-website-button {
+  margin-top: 1rem; /* 16px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem; /* 8px */
+  padding: 0.75rem 1.25rem; /* 12px 20px */
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #4f46e5; /* indigo-600 */
+  border: none;
+  border-radius: 0.5rem; /* 8px */
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.create-website-button:hover {
+  background-color: #4338ca; /* indigo-700 */
+  transform: scale(1.05);
+}
+
+.create-website-button:focus-visible {
+  outline: 4px solid #a5b4fc; /* ring-4 ring-indigo-300 */
+  outline-offset: 2px;
+}
+
+/* 웹사이트 목록 그리드 */
+.website-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* 모바일: 1열 */
+  gap: 2rem; /* 32px */
+}
+
+/* 웹사이트가 없을 때 표시 */
+.no-websites-placeholder {
+  text-align: center;
+  padding: 5rem 1rem; /* 80px 16px */
+  background-color: #ffffff;
+  border-radius: 0.5rem; /* 8px */
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+.placeholder-title {
+  font-size: 1.5rem; /* 24px */
+  font-weight: 600;
+  color: #374151; /* gray-700 */
+}
+
+.placeholder-text {
+  margin-top: 0.5rem; /* 8px */
+  color: #6b7280; /* gray-500 */
+}
+
+/* 
+  WebsiteCard.tsx 컴포넌트의 최상위 div에 'website-card' 클래스를 추가해주세요.
+  예: <div className="website-card"> ... </div>
+*/
+.website-card {
+  background-color: white;
+  border-radius: 0.75rem; /* 12px */
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  overflow: hidden; /* 이미지 radius 적용을 위함 */
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.website-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+
+/* --- 반응형 디자인 --- */
+
+/* 태블릿 (640px 이상) */
+@media (min-width: 640px) {
+  .container {
+    padding: 1.5rem; /* 24px */
+  }
+
+  .page-header {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .create-website-button {
+    margin-top: 0;
+  }
+}
+
+/* 작은 데스크탑 (768px 이상) */
+@media (min-width: 768px) {
+  .website-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2열 */
+  }
+}
+
+/* 일반 데스크탑 (1024px 이상) */
+@media (min-width: 1024px) {
+  .container {
+    padding: 2rem; /* 32px */
+  }
+
+  .website-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3열 */
+  }
+}
+
+
+/* --- 다크 모드 스타일 --- */
+@media (prefers-color-scheme: dark) {
+  .app-container {
+    background-color: #111827; /* gray-900 */
+    color: #e5e7eb; /* gray-200 */
+  }
+
+  .main-title {
+    color: #ffffff;
+  }
+  
+  .subtitle {
+    color: #9ca3af; /* gray-400 */
+  }
+
+  .create-website-button:focus-visible {
+    outline-color: #3730a3; /* dark:ring-indigo-800 의 유사 색상 */
+  }
+
+  .no-websites-placeholder {
+    background-color: #1f2937; /* gray-800 */
+    box-shadow: none;
+    border: 1px solid #374151; /* gray-700 */
+  }
+
+  .placeholder-title {
+    color: #d1d5db; /* gray-300 */
+  }
+  
+  .placeholder-text {
+    color: #9ca3af; /* gray-400 */
+  }
+
+  .website-card {
+    background-color: #1f2937; /* gray-800 */
+    border: 1px solid #374151; /* gray-700 */
+  }
+}

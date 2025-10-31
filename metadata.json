@@ -1,0 +1,5 @@
+{
+  "name": "My Websites Dashboard",
+  "description": "A simple dashboard to create and manage a list of your websites, displayed in a clean, block-style layout.",
+  "requestFramePermissions": []
+}

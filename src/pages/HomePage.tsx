@@ -31,6 +31,14 @@ const initialWebsites: Website[] = [
         category: '게임',
         path: '/E-commerce_Store', // 여기에 실제 쇼핑몰 URL을 입력하세요.
     },
+    {
+        id: '4',
+        title: 'SpaceShooterSaga',
+        description: 'SpaceShooterSaga. 내가 만든 슈팅 게임^^',
+        imageUrl: 'https://picsum.photos/seed/ecommerce/600/400',
+        category: '게임',
+        path: '/SpaceShooterSaga', // 여기에 실제 쇼핑몰 URL을 입력하세요.
+    },
 ];
 
 const HomePage: React.FC = () => {

@@ -15,7 +15,7 @@ const Layout: React.FC = () => {
                 activeCategory={activeCategory}
                 onCategoryChange={setActiveCategory}
             />
-            <main className="main-content">
+            <main className="main-content" style={{ textalign: 'center' }}>
                 <Outlet /> {/* 이 부분이 페이지 컴포넌트(HomePage, PortfolioPage 등)로 교체됩니다. */}
             </main>
             <Footer />

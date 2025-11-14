@@ -1,5 +1,5 @@
 {
-  "homepage": "https://github.com/alanahn/test_myReactProject",
+  "homepage": "https://github.com/alanahn/test_myReactProject/",
   "name": "my-websites-dashboard",
   "private": true,
   "version": "0.0.0",
@@ -13,7 +13,8 @@
   },
   "dependencies": {
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.9.6"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",

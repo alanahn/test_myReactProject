@@ -6,6 +6,7 @@ export interface Website {
   description: string;
   imageUrl: string;
   category: WebsiteCategory;
+  path: string;
 }
 
 export type WebsiteFormData = Omit<Website, 'id' | 'imageUrl'>;
